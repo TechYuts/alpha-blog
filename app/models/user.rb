@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     # implements db relations
-    has_many :articles
+    has_many :articles, dependent: :destroy
     # before_save do something before saving
     before_save { self.email = email.downcase }
     # case_sensitive: false ignores cases
